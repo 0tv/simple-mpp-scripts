@@ -1,9 +1,6 @@
 /*
-  Cosmic is a multi-purpose, outer space-themed bot on multiplayerpiano, created by Hri7566.
-  This file automates using the baking comman efficiently and without the need for the user to interact.
-  
-  It is generally recommended that you keep the tab focused in some way so that it does not periodically disconnect, while this is not usually an issue, there can be cases where the script misses a chat message from the bot due to being disconnected, which breaks the baking loop and requires manually restarting. If you suspect you may disconnect at times, it is recommended to set the BAKE_ON_RECONNECT boolean to true.
-*/
+  wawa
+ */
 
 // constants
 const MESSAGES = ['wa','wawa'];
