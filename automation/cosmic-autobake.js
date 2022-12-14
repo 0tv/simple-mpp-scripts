@@ -13,6 +13,11 @@ const BOT_PREFIX = '*'; // The prefix for the bot, this is the character or stri
 const MESSAGE_PREFIX = '\u034f'; // Anything that comes before the actual message in chat, leave as-is if you are unsure.
 const BAKING_MESSAGE = "[Wawa's baking script]"; // Text that comes after the baking command, this input is not required and is ignored by the bot.
 const DEBUG = false; // Set to true if you want to see the script's thought process in your console.
+const VERSION = "1.0.3"; // Recommended not to mess with this, there's no reason to anyway.
+
+// for integration with other scripts
+if(!window.simpleMPPscripts) window.simpleMPPscripts = { modules: [] };
+window.simpleMPPscripts.modules.push({ name: 'Cosmic Autobaker', script: '/automation/cosmic-autobake.js', version: VERSION, authors: ['0tv (wawa)'] });
 
 // functions
 function handleMessage(event) {
