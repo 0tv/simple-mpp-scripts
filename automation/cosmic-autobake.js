@@ -48,3 +48,5 @@ MPP.client.on('ch', event => {
     debug("BakeOnReconnect", "Not sending chat message to bake since bake on reconnect is disabled.");
   };
 });
+
+if(BAKE_ON_EXECUTE) MPP.chat.send(BOT_PREFIX + 'bake ' + BAKING_MESSAGE);
