@@ -23,9 +23,14 @@ function handleMessage(event) {
   
   if(BOT_IDS.length === 0 || BOT_IDS.includes(user._id)) {
     // This user is the cosmic bot, proceed with checking message.
-    if(message.startsWith(MESSAGE_PREFIX + ) {
-
+    if(message.startsWith(MESSAGE_PREFIX + MPP.client.getOwnParticipant().name + " finished baking")) {
+      debug("ChatHandler", "Baking finished, sending next bake command.");
+      MPP.chat.send(BOT_PREFIX + 'bake ' + BAKING_MESSAGE);
+    } else {
+      debug("ChatHandler", "Message mismatch!");
     };
+  } else {
+    debug("ChatHandler", "_ID mismatch!");
   }; 
 };
 
@@ -38,8 +43,8 @@ MPP.client.on('a', handleMessage);
 MPP.client.on('ch', event => {
   if(BAKE_ON_RECONNECT) {
     debug("BakeOnReconnect", "Sending chat message to bake.");
-    MPP.chat.send(BOT_PREFIX + 'bake');
+    MPP.chat.send(BOT_PREFIX + 'bake ' + BAKING_MESSAGE);
   } else {
-    debug("BakeOnReconnect", "Not baking.");
+    debug("BakeOnReconnect", "Not sending chat message to bake since bake on reconnect is disabled.");
   };
 });
