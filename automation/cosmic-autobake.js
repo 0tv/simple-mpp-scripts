@@ -47,7 +47,7 @@ function debug(service, text) {
 MPP.client.on('a', handleMessage);
 MPP.client.on('ch', event => {
   if(BAKE_ON_RECONNECT) {
-    if(Object.values(client.ppl).map(x => BOT_IDS.includes(x._id)).indexOf(true) !== -1) {
+    if(Object.values(MPP.client.ppl).map(x => BOT_IDS.includes(x._id)).indexOf(true) !== -1) {
       debug("BakeOnReconnect", "Sending chat message to bake.");
       MPP.chat.send(BOT_PREFIX + 'bake ' + BAKING_MESSAGE);
     } else {
